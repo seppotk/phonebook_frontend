@@ -102,6 +102,8 @@
 
 // 1.1
 
+// -----------------------------------------------------------------------
+
 // const App = () => {
 //   const course = 'Half Stack application development'
 //   const part1 = 'Fundamentals of React'
@@ -181,7 +183,8 @@
 
 // export default App
 
-// 1.2
+// 1.2 ansmer
+// -----------------------------------------------------------------------------
 
 
 
