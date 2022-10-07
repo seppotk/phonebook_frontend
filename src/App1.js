@@ -100,9 +100,7 @@
 //   )
 // }
 
-// 1.1 exercise
-
-// -----------------------------------------------------------------------
+// 1.1
 
 // const App = () => {
 //   const course = 'Half Stack application development'
@@ -148,6 +146,9 @@
 //   )
 // };
 
+
+
+
 // const Header = (props) => {
 // 	return (
 // 		<div>
@@ -183,8 +184,7 @@
 
 // export default App
 
-// 1.2 answer
-// -----------------------------------------------------------------------------
+// 1.2 exercise
 
 const App = () => {
 	  const course = 'Half Stack application development'

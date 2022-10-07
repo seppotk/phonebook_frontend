@@ -94,7 +94,7 @@
 // };
 // export default App
 
-// // 1.3 answer
+// // 1.3 answer exercise
 
 // const App = () => {
 //     const course = 'Half Stack application development'
@@ -127,7 +127,7 @@
 
 // -------------------------------------------------------------
 
-// answer 1.4
+// answer 1.4 exercise
 
 
 // const App = () => {

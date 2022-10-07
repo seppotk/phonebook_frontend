@@ -477,8 +477,8 @@ const Button = ({ onClick, text }) => <button onClick={onClick}>{text}</button>
 		<Button
 		  onClick={decreaseByOne}
 		  text='minus'
-		/>           
-	  </div>
+		/>
+	  </div> 
 	)
   }
 
