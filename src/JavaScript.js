@@ -244,23 +244,52 @@
 // Classes
 
 
-class Person {
-  constructor(name, age) {
-    this.name = name
-    this.age = age
-  }
-  greet() {
-    console.log('hello, my name is ' + this.name)
-  }
-}
+// class Person {
+//   constructor(name, age) {
+//     this.name = name
+//     this.age = age
+//   }
+//   greet() {
+//     console.log('hello, my name is ' + this.name)
+//   }
+// }
 
-const adam = new Person('Adam Ondra', 29)
-adam.greet()
+// const adam = new Person('Adam Ondra', 29)
+// adam.greet()
 
-const janja = new Person('Janja Garnbret', 23)
-janja.greet()
+// const janja = new Person('Janja Garnbret', 23)
+// janja.greet()
 
 
 
 
     // --------------------------------------------------
+
+// const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+// const result = words.filter(word => word.length > 6);
+// console.log(result);
+
+
+const notes = [
+  {
+    id: 1,
+    content: 'HTML is easy',
+    date: '2019-05-30T17:30:31.098Z',
+    important: true
+  },
+  {
+    id: 2,
+    content: 'Browser can execute only JavaScript',
+    date: '2019-05-30T18:39:34.091Z',
+    important: false
+  },
+  {
+    id: 3,
+    content: 'GET and POST are the most important methods of HTTP protocol',
+    date: '2019-05-30T19:20:14.298Z',
+    important: true
+  }
+]
+
+const result = notes.map(note => note.id)
+console.log(result)
