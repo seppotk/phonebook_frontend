@@ -764,34 +764,149 @@
 // 2.1: Course information step6
 
 //import { useState } from 'react'
+// import Course from './P2_a_rendering_a_collection_modules/components/Course'
+
+// const App = () => {
+// 	const course = {
+// 	  id: 1,
+// 	  name: 'Half Stack application development',
+// 	  parts: [
+// 		{
+// 		  name: 'Fundamentals of React',
+// 		  exercises: 10,
+// 		  id: 1
+// 		},
+// 		{
+// 		  name: 'Using props to pass data',
+// 		  exercises: 7,
+// 		  id: 2
+// 		},
+// 		{
+// 		  name: 'State of a component',
+// 		  exercises: 14,
+// 		  id: 3
+// 		},
+// 		{
+// 	      name: 'Redux',
+// 		  exercises: 11,
+// 		  id: 4
+// 		}
+// 	  ]
+// 	}
+  
+// 	return <Course course={course} />
+//   }
+  
+// export default App
+
+
+// -----------------------------------------------------------------
+// 2.2: Course information step7
+// Show also the sum of the exercises of the course
+
+
+// import Course from './P2_a_rendering_a_collection_modules/components/Course'
+
+// const App = () => {
+// 	const course = {
+// 	  id: 1,
+// 	  name: 'Half Stack application development',
+// 	  parts: [
+// 		{
+// 		  name: 'Fundamentals of React',
+// 		  exercises: 10,
+// 		  id: 1
+// 		},
+// 		{
+// 		  name: 'Using props to pass data',
+// 		  exercises: 7,
+// 		  id: 2
+// 		},
+// 		{
+// 		  name: 'State of a component',
+// 		  exercises: 14,
+// 		  id: 3
+// 		},
+// 		{
+// 	      name: 'Redux',
+// 		  exercises: 11,
+// 		  id: 4
+// 		}
+// 	  ]
+// 	}
+  
+// 	return <Course course={course} />
+//   }
+  
+// export default App
+
+
+// -----------------------------------------------------------------
+//2.3*: Course information step8
+// calculate the sum of exercises with the array method reduce
+// look content.js
+
+//2.4: Course information step9
+// Let's extend our application to allow for an arbitrary number of courses:
+
+
 import Course from './P2_a_rendering_a_collection_modules/components/Course'
 
+
 const App = () => {
-	const course = {
-	  id: 1,
-	  name: 'Half Stack application development',
-	  parts: [
-		{
-		  name: 'Fundamentals of React',
-		  exercises: 10,
-		  id: 1
-		},
-		{
-		  name: 'Using props to pass data',
-		  exercises: 7,
-		  id: 2
-		},
-		{
-		  name: 'State of a component',
-		  exercises: 14,
-		  id: 3
-		}
-	  ]
-	}
+	const courses = [
+	  {
+		name: 'Half Stack application development',
+		id: 1,
+		parts: [
+		  {
+			name: 'Fundamentals of React',
+			exercises: 10,
+			id: 1
+		  },
+		  {
+			name: 'Using props to pass data',
+			exercises: 7,
+			id: 2
+		  },
+		  {
+			name: 'State of a component',
+			exercises: 14,
+			id: 3
+		  },
+		  {
+			name: 'Redux',
+			exercises: 11,
+			id: 4
+		  }
+		]
+	  }, 
+	  {
+		name: 'Node.js',
+		id: 2,
+		parts: [
+		  {
+			name: 'Routing',
+			exercises: 3,
+			id: 1
+		  },
+		  {
+			name: 'Middlewares',
+			exercises: 7,
+			id: 2
+		  }
+		]
+	  }
+	]
   
-	return <Course course={course} />
-  }
+	// return <Course course={course} />
+	return (
+		<div>
+		  <Course courses={courses} />
+		</div>
+	  );
+
+}
   
 export default App
-
 
