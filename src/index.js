@@ -5,8 +5,12 @@ import App from './App'
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App />) */
 
-/* 
-import App from './P2_a_rendering_a_collection_modules/App'
+// this is for notes
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+// import App from './P2_a_rendering_a_collection_modules/App'
+import App from './P2_b_forms/App'
 const notes = [
   {
     id: 1,
@@ -31,18 +35,17 @@ const notes = [
 ReactDOM.createRoot(document.getElementById('root')).render(
   <App notes={notes} />
 )
-*/
+
 
 
 // this is for part2 
 
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-// import ReactDOM from 'react-dom'
-import App from './App'
+// import React from 'react'
+// import ReactDOM from 'react-dom/client'
+// import App from './App'
 
 
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+// ReactDOM.createRoot(document.getElementById('root')).render(<App />)
 
 

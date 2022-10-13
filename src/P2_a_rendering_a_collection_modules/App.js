@@ -132,7 +132,7 @@
 
 // ----------------------------------------------------------
 
-// added Note.js
+// added Note.js Part1 a
 
 import Note from './components/Note'
 
@@ -147,7 +147,5 @@ const App = ({ notes }) => {
 }
 
 export default App
-  
-  
 
 
