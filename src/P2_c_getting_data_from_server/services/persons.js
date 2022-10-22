@@ -24,5 +24,6 @@ const remove = id => {
   return request.then(response => response.data)
 }
 
+const doMath = { getAll, create, update, remove }
 
-export default { getAll, create, update, remove };
+export default doMath;
