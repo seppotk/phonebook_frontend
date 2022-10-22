@@ -84,18 +84,35 @@ ReactDOM.createRoot(document.getElementById('root')).render(<App />) */
 
 // ReactDOM.createRoot(document.getElementById('root')).render(<App />)
 
-// 2.4 version
+
+// ------------------------------------------------------------------
+
+// 2.4 version nodes
 
 
 
-import ReactDOM from 'react-dom/client'
-// import App from './App'
-import App from './P2_c_getting_data_from_server/App'
-import axios from 'axios'
+// import ReactDOM from 'react-dom/client'
+// // import App from './App'
+// import App from './P2_c_getting_data_from_server/App'
+// import axios from 'axios'
 
-axios.get('http://localhost:3001/notes').then(response => {
-  const notes = response.data
-  ReactDOM.createRoot(document.getElementById('root')).render(
-    <App notes={notes} />
-  )
-})
+// axios.get('http://localhost:3001/notes').then(response => {
+//   const notes = response.data
+//   ReactDOM.createRoot(document.getElementById('root')).render(
+//     <App notes={notes} />
+//   )
+// })
+
+
+
+// ------------------------------------------------
+
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
+
+// import axios from 'axios'
+
+
+ReactDOM.render(<App />, document.getElementById('root'))
