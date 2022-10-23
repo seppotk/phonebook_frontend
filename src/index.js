@@ -106,7 +106,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(<App />) */
 
 
 // ------------------------------------------------
-
+// this is for countries
 
 import React from 'react'
 // import ReactDOM from 'react-dom'
