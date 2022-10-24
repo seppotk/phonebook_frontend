@@ -33,44 +33,93 @@ export default App */
 
 // --------------------------------------------------------------
 
-/* import { useState } from 'react'
+// import { useState } from 'react'
 
 
-const App = () => {
-  const [clicks, setClicks] = useState({
-    left: 0, right: 0
-  })
+// const App = () => {
+//   const [clicks, setClicks] = useState({
+//     left: 0, right: 0
+//   })
 
-  const handleLeftClick = () => {
-    const newClicks = { 
-      left: clicks.left + 1, 
-      right: clicks.right 
-    }
-    setClicks(newClicks)
-  }
+//   const handleLeftClick = () => {
+//     const newClicks = { 
+//       left: clicks.left + 1, 
+//       right: clicks.right 
+//     }
+//     setClicks(newClicks)
+//   }
 
-  const handleRightClick = () => {
-    const newClicks = { 
-      left: clicks.left, 
-      right: clicks.right + 1 
-    }
-    setClicks(newClicks)
-  }
+//   const handleRightClick = () => {
+//     const newClicks = { 
+//       left: clicks.left, 
+//       right: clicks.right + 1 
+//     }
+//     setClicks(newClicks)
+//   }
 
-  return (
-    <div>
-      {clicks.left}
-      <button onClick={handleLeftClick}>left</button>
-      <button onClick={handleRightClick}>right</button>
-      {clicks.right}
-    </div>
-  )
-}
+//   return (
+//     <div>
+//       {clicks.left}
+//       <button onClick={handleLeftClick}>left</button>
+//       <button onClick={handleRightClick}>right</button>
+//       {clicks.right}
+//     </div>
+//   )
+// }
 
-export default App */
+// export default App
 
 
 // ----------------------------------------------------
+// added spread
+
+// import { useState } from 'react'
+
+
+// const App = () => {
+//   const [clicks, setClicks] = useState({
+//     left: 0, right: 0
+//   })
+
+//   // const handleLeftClick = () => {
+//   //   const newClicks = { 
+//   //     ...clicks, 
+//   //     left: clicks.left + 1 
+//   //   }
+//   //   setClicks(newClicks)
+//   // }
+  
+//   // const handleRightClick = () => {
+//   //   const newClicks = { 
+//   //     ...clicks, 
+//   //     right: clicks.right + 1 
+//   //   }
+//   //   setClicks(newClicks)
+//   // }
+  
+// // more short
+// const handleLeftClick = () =>
+// setClicks({ ...clicks, left: clicks.left + 1 })
+
+// const handleRightClick = () =>
+//   setClicks({ ...clicks, right: clicks.right + 1 })
+
+
+//   return (
+//     <div>
+//       {clicks.left}
+//       <button onClick={handleLeftClick}>left</button>
+//       <button onClick={handleRightClick}>right</button>
+//       {clicks.right}
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+// ------------------------------------------------------------
+
 
 /* import { useState } from 'react'
 
@@ -338,35 +387,36 @@ export default App  */
 // ------------------------------------------------------
 // do this
 
-import { useState } from 'react'
+// import { useState } from 'react'
 
-const Display = props => <div>{props.value}</div>
+// const Display = props => <div>{props.value}</div>
 
-const Button = (props) => (
-  <button onClick={props.handleClick}>
-    {props.text}
-  </button>
-)
+// const Button = (props) => (
+//   <button onClick={props.handleClick}>
+//     {props.text}
+//   </button>
+// )
 
-const App = () => {
-  const [value, setValue] = useState(10)
+// const App = () => {
+//   const [value, setValue] = useState(10)
 
-  const setToValue = newValue => {
-    console.log('value now', newValue)
-    setValue(newValue)
-  }
+//   const setToValue = newValue => {
+//     console.log('value now', newValue)
+//     setValue(newValue)
+//   }
 
-  return (
-    <div>
-      <Display value={value} />
-      <Button handleClick={() => setToValue(1000)} text="thousand" />
-      <Button handleClick={() => setToValue(0)} text="reset" />
-      <Button handleClick={() => setToValue(value + 1)} text="increment" />
-    </div>
-  )
-}
-
-
+//   return (
+//     <div>
+//       <Display value={value} />
+//       <Button handleClick={() => setToValue(1000)} text="thousand" />
+//       <Button handleClick={() => setToValue(0)} text="reset" />
+//       <Button handleClick={() => setToValue(value + 1)} text="increment" />
+//     </div>
+//   )
+// }
 
 
-export default App
+
+
+// export default App
+

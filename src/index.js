@@ -1,122 +1,74 @@
 /* import React from 'react'
 import ReactDOM from 'react-dom/client'
+// import App from './App'
+// import App from './1_Introduction/App'
+// import App from './2_JavaScript/App'
+// import App from './3_Component_state_events/App'
+import App from './4_More_complex_state_debugging/App'
+// ReactDOM.createRoot(document.getElementById('root')).render(<App />)
 
-import App from './App'
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />) */
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-// this is for notes
+ */
+// index.js for new example
 
-// import React from 'react'
-// import ReactDOM from 'react-dom/client'
-// // import App from './P2_a_rendering_a_collection_modules/App'
-// import App from './P2_b_forms/App'
-// const notes = [
-//   {
-//     id: 1,
-//     content: 'HTML is easy',
-//     date: '2019-05-30T17:30:31.098Z',
-//     important: true
-//   },
-//   {
-//     id: 2,
-//     content: 'Browser can execute only JavaScript',
-//     date: '2019-05-30T18:39:34.091Z',
-//     important: false
-//   },
-//   {
-//     id: 3,
-//     content: 'GET and POST are the most important methods of HTTP protocol',
-//     date: '2019-05-30T19:20:14.298Z',
-//     important: true
-//   }
-// ] 
+/* import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+import App from './Component_state_events/App'
+
+// let counter = 1
 
 // ReactDOM.createRoot(document.getElementById('root')).render(
-//   <App notes={notes} />
+//   <App counter={counter} />
 // )
 
+let counter = 1
+
+const refresh = () => {
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    <App counter={counter} />
+  )
+}
+
+// refresh()
+// counter += 1
+// refresh()
+// counter += 1
+// refresh()
+
+setInterval(() => {
+  refresh()
+  counter += 1
+}, 1000) */
+
+// below for part1 start
+
+/* import React from 'react'
+import ReactDOM from 'react-dom'
+// import App from './3_Component_state_events/App'
+import App from './4_More_complex_state_debugging/App'
 
 
-// this is for part2 
+ReactDOM.render(<App />, document.getElementById('root')) */
 
-// import React from 'react'
-// import ReactDOM from 'react-dom/client'
-// import App from './App'
-
-
-
-// ReactDOM.createRoot(document.getElementById('root')).render(<App />)
-
-
-// this is used for Part 2 c server
-// import React from 'react'
-// import ReactDOM from 'react-dom/client'
-
-// import App from './P2_c_getting_data_from_server/App'
-// // import App from './App'
-// import axios from 'axios'
-
-// const promise = axios.get('http://localhost:3001/notes')
-
-// promise.then(response => {
-//   console.log(response)
-// })
-
-
-// const promise2 = axios.get('http://localhost:3001/foobar')
-// console.log(promise2)
-
-// axios.get('http://localhost:3001/notes').then(response => {
-//   const notes = response.data
-//   ReactDOM.createRoot(document.getElementById('root')).render(<App notes={notes} />)
-// })
-
-
-// axios
-//   .get('http://localhost:3001/notes')
-//   .then(response => {
-//     const notes = response.data
-//     console.log(notes)
-//   })
-
-// ReactDOM.createRoot(document.getElementById('root')).render(<App />)
-
-// ReactDOM.createRoot(document.getElementById('root')).render(<App />)
-
-
-// ------------------------------------------------------------------
-
-// 2.4 version nodes
-
-
-
-// import ReactDOM from 'react-dom/client'
-// // import App from './App'
-// import App from './P2_c_getting_data_from_server/App'
-// import axios from 'axios'
-
-// axios.get('http://localhost:3001/notes').then(response => {
-//   const notes = response.data
-//   ReactDOM.createRoot(document.getElementById('root')).render(
-//     <App notes={notes} />
-//   )
-// })
-
-
-
-// ------------------------------------------------
-// this is for countries
+// below for part1 exercises
 
 import React from 'react'
-// import ReactDOM from 'react-dom'
-
 import ReactDOM from 'react-dom/client'
+
 import App from './App'
 
-// import axios from 'axios'
+// import App from './1_Introduction/App'
+// import App from './2_JavaScript/App'
+// import App from './3_Component_state_events/App'
+// import App from './4_More_complex_state_debugging/App'
 
-
-// ReactDOM.render(<App />, document.getElementById('root'))
-
+// import App from './P2_a_rendering_a_collection_modules/App'
 ReactDOM.createRoot(document.getElementById('root')).render(<App />)

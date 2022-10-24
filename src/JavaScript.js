@@ -269,27 +269,49 @@
 // const result = words.filter(word => word.length > 6);
 // console.log(result);
 
+// -----------------------------------------------------------------
 
-const notes = [
-  {
-    id: 1,
-    content: 'HTML is easy',
-    date: '2019-05-30T17:30:31.098Z',
-    important: true
-  },
-  {
-    id: 2,
-    content: 'Browser can execute only JavaScript',
-    date: '2019-05-30T18:39:34.091Z',
-    important: false
-  },
-  {
-    id: 3,
-    content: 'GET and POST are the most important methods of HTTP protocol',
-    date: '2019-05-30T19:20:14.298Z',
-    important: true
-  }
-]
 
-const result = notes.map(note => note.id)
-console.log(result)
+// const notes = [
+//   {
+//     id: 1,
+//     content: 'HTML is easy',
+//     date: '2019-05-30T17:30:31.098Z',
+//     important: true
+//   },
+//   {
+//     id: 2,
+//     content: 'Browser can execute only JavaScript',
+//     date: '2019-05-30T18:39:34.091Z',
+//     important: false
+//   },
+//   {
+//     id: 3,
+//     content: 'GET and POST are the most important methods of HTTP protocol',
+//     date: '2019-05-30T19:20:14.298Z',
+//     important: true
+//   }
+// ]
+
+// const result = notes.map(note => note.id)
+// console.log(result)
+
+
+// exam pratising 10
+
+
+let animals = ['cat', 'chicken', 'cow', 'sheep', 'horse']
+
+{/* <ul>
+<li>cat</li>
+<li>chicken</li>
+<li>cow</li>
+<li>sheep</li>
+<li>horse</li>
+</ul> */}
+
+
+
+
+
+

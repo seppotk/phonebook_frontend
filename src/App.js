@@ -640,40 +640,356 @@
 // 2.12* Data for countries, step1
 
 
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import Content from './P2_c_getting_data_from_server/components/Content_country'
-import Filter from './P2_c_getting_data_from_server/components/Filter_country'
+// import React, { useState, useEffect } from 'react'
+// import axios from 'axios'
+// import Content from './P2_c_getting_data_from_server/components/Content_country'
+// import Filter from './P2_c_getting_data_from_server/components/Filter_country'
 
-const App = () => {
-  const [countries, setCountries] = useState([])
-  const [allCountries, setAllCountries] = useState([])
-  const [newFilter, setNewFilter] = useState('')
+// const App = () => {
+//   const [countries, setCountries] = useState([])
+//   const [allCountries, setAllCountries] = useState([])
+//   const [newFilter, setNewFilter] = useState('')
 
- useEffect(() => {
-  axios
-    .get('https://restcountries.com/v2/all')
-    .then(response => {
-      console.log('promise fulfilled')
-      setAllCountries(response.data)
-    })
-}, [])
+//  useEffect(() => {
+//   axios
+//     .get('https://restcountries.com/v2/all')
+//     .then(response => {
+//       console.log('promise fulfilled')
+//       setAllCountries(response.data)
+//     })
+// }, [])
 
-const handleFilterChange = (event) => {
-  setNewFilter(event.target.value)
-  if (newFilter) {
-    const regex = new RegExp( newFilter, 'i' );
-    const filteredCountries = () => allCountries.filter(country => country.name.match(regex))
-    setCountries(filteredCountries)
-  }
-}
+// const handleFilterChange = (event) => {
+//   setNewFilter(event.target.value)
+//   if (newFilter) {
+//     const regex = new RegExp( newFilter, 'i' );
+//     const filteredCountries = () => allCountries.filter(country => country.name.match(regex))
+//     setCountries(filteredCountries)
+//   }
+// }
 
-return (
-  <div>
-    <Filter value={newFilter} onChange={handleFilterChange} />
-    <Content countries={countries} setCountries={setCountries} />
-  </div>
-)
-}
+// return (
+//   <div>
+//     <Filter value={newFilter} onChange={handleFilterChange} />
+//     <Content countries={countries} setCountries={setCountries} />
+//   </div>
+// )
+// }
 
-export default App
+// export default App
+
+
+// for exam study exercise 3
+
+// import React, { useState } from 'react'
+// const App = () => {
+// let fruitStateVariable = useState('banana');
+
+// console.log(typeof fruitStateVariable)
+// console.log(typeof fruitStateVariable[1])
+
+// }
+
+// export default App
+
+
+// for exam study exercise 4
+
+// import React, { useState } from 'react'
+
+// export default function App() {
+//   const [age, setAge] = useState(0)
+//   const [foobar, setFoobar] = useState(null)
+
+//   if ( age > 10 ) {
+//     setFoobar(null)
+//   }
+
+//   return (
+//     <div>
+//       <h2>Exercise 4</h2>
+
+//     </div>
+//   )
+// }
+
+
+// for exam study exercise 6
+
+//function uppercase start
+
+// function Welcome(props) {
+//   return <h1>Hello, {props.name}</h1>;
+// }
+
+// export default function App() {
+//   return (
+//     <div>
+//       <Welcome name="Sara" />
+//       <Welcome name="Cahal" />
+//     </div>
+//   );
+// }
+
+// for exam study exercise 7
+// epäonnistui
+
+
+// import { useState } from "react";
+
+// function App() {
+//   const [counterValue, setCounterValue] = useState(0);
+//   const [inputValue, setInputValue] = useState(1);
+
+//   const addToCounter = () => {
+//     /* Place holder 2 */
+//     setCounterValue(counterValue  + 1)
+//   }
+
+//   const subFromCounter = () => {
+//     /* Place holder 3 */
+//     setCounterValue(counterValue - 1)
+//   }
+
+//   return (
+//     <div className="text-center">
+//       <h3>My Counter</h3>
+//       <h2>{counterValue}</h2>
+//       <button 
+//       onClick={subFromCounter}
+//       >-</button>
+//       <input 
+//       type="input" 
+//       value={inputValue}
+//       className="text-center"
+//       onChange={(e)=>{
+//         /* Place holder 1 */
+//         setInputValue(e.target.value)
+
+//       }}
+//       />
+//       <button 
+//       onClick={addToCounter}
+//       >+</button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+// for exam study exercise 8
+
+
+// import { useState } from 'react'
+
+// const History = (props) => {
+//   if (props.allClicks.length === 0) {
+//     return (
+//       <div>
+//         the app is used by pressing the buttons
+//       </div>
+//     )
+//   }
+
+//   return (
+//     <div>
+//       button press history: {props.allClicks.join(' ')}
+//     </div>
+//   )
+// }
+
+// const Button = ({ handleClick, text }) => (
+//   <button onClick={handleClick}>
+//     {text}
+//   </button>
+// )
+
+// const App = () => {
+//   const [left, setLeft] = useState(0)
+//   const [right, setRight] = useState(0)
+//   const [allClicks, setAll] = useState([])
+
+//   const handleLeftClick = () => {
+//     setAll(allClicks.concat('L'))
+//     setLeft(left + 1)
+//   }
+
+//   const handleRightClick = () => {
+//     setAll(allClicks.concat('R'))
+//     setRight(right + 1)
+//   }
+
+//   return (
+//     <div>
+//       {left}
+//       <Button handleClick={handleLeftClick} text='left' />
+//       <Button handleClick={handleRightClick} text='right' />
+//       {right}
+//       <History allClicks={allClicks} />
+//     </div>
+//   )
+// }
+
+// export default App;
+
+
+
+
+// for exam study exercise 9
+
+// import { useState } from 'react'
+
+// const Display = props => <div>{props.value}</div> 
+
+// const Button = (props) => (
+//   <button onClick={props.handleClick}>
+//     {props.text}
+//   </button>
+// )
+
+// export default function App() {
+//   const [value, setValue] = useState(10)
+
+//   const setToValue = newValue => {
+//     console.log('value now', newValue)
+//     setValue(newValue)
+//   }
+
+//   // do not plase Display here
+//  //  const Display = props => <div>{props.value}</div> 
+
+//   return (
+//     <div>
+//       <Display value={value} />
+//       <Button handleClick={() => setToValue(1000)} text="thousand" />
+//       <Button handleClick={() => setToValue(0)} text="reset" />
+//       <Button handleClick={() => setToValue(value + 1)} text="increment" />
+//     </div>
+//   )
+// }
+
+
+
+
+
+// for exam study exercise 10
+
+
+// export default function App() {
+
+
+//   let animals = ['cat', 'chicken', 'cow', 'sheep', 'horse']
+
+// return (
+//   <div>
+//    <ul>{animals.map(note => <li>{note}</li>)} 
+//   </ul>
+//   </div>
+// )
+// }
+
+// added key
+
+// export default function App() {
+
+
+//   let animals = ['cat', 'chicken', 'cow', 'sheep', 'horse']
+
+// return (
+//   <div>
+//    <ul>{animals.map(note => <li key = {note} >{note}</li>)} 
+//   </ul>
+//   </div>
+// )
+// }
+
+
+// for exam study exercise 11
+
+
+// const users = [
+//   { name: "John Doe", id: 1 },
+//   { name: "Jane Doe", id: 2 },
+//   { name: "Billy Doe", id: 3 }
+// ];
+
+// const userItems = users.map(item =>
+//   <li key= {item.id}>{item.name}</li>)
+//     /* Your code here*/
+
+// export default function App() {
+//   return (
+//     <>
+//       <h3>Users:</h3>
+//       <ul>{userItems}</ul>
+//     </>
+//   );
+// }
+
+
+
+
+
+
+
+// -------------------------------------------------------
+// for exam study exercise 15
+
+// import axios from "axios";
+// import React from "react";
+
+// const baseURL = "https://jsonplaceholder.typicode.com/posts";
+
+// export default function App() {
+//   const [post, setPost] = React.useState(null);
+
+//   React.useEffect(() => {
+//     axios.get(`${baseURL}/1`).then((response) => {
+//       setPost(response.data);
+//     });
+//   }, []);
+
+//   function createPost() {
+//     axios
+//       .post(baseURL, {
+//         title: "Hello World!",
+//         body: "This is a new post."
+//       })
+//       .then((response) => {
+//         setPost(response.data);
+//       });
+//   }
+
+//   if (!post) return "No post!"
+
+//   return (
+//     <div>
+//       <h1>{post.title}</h1>
+//       <p>{post.body}</p>
+//       <button onClick={createPost}>Create Post</button>
+//     </div>
+//   );
+// }
+
+
+
+// --------------------------------------------------
+// for exam study exercise 16
+
+// import { useState } from 'react'
+
+// export default function App() {
+//   const [value, setValue] = useState("");
+
+//   return (
+//     <>
+//       <h3>Disable Button Challenge</h3>
+//       <input type="text" onChange={(e) => setValue(e.target.value)} />
+//       <button disabled={value.length < 1}>Submit</button>
+//     </>
+//   );
+// }
+
+
+// EXAM:
