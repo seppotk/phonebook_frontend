@@ -992,4 +992,61 @@
 // }
 
 
+// EXAM PRACTISE:
+
+  // const App = () => {
+  //   return (
+  //       <ul>
+  //           <li>Katherine Johnson: mathematician</li>
+  //           <li>Mario Pasquel: chemist</li>
+  //           <li>Lavon Julian: chemist</li>
+  //       </ul>
+  //   )
+  // };
+
+  // export default App
+
+
+/* 
+export default function App() {
+  return (
+    <>
+      <h3>Users:</h3>
+      <ul>
+        <li>Katherine Johnson: mathematician</li>
+        <li>Mario Pasquel: chemist</li>
+      
+      </ul>
+    </>
+  );
+} */
+
+
 // EXAM:
+
+import { useEffect } from 'react';
+
+function Welcome(props) {
+ const msg = `Hi, ${props}!`; 
+  useEffect(() => {
+   document.title = `Welcome ${props}`; 
+ }, [props]);
+return <>{msg}</h1>;
+
+}
+
+export default function App() {
+  Welcome("Kalle")
+
+  return (
+   
+    <>
+      <h3>Users:</h3>
+      <ul>
+        <li>Katherine Johnson: mathematician</li>
+        <li>Mario Pasquel: chemist</li>
+
+      </ul>
+    </>
+  );
+} 
