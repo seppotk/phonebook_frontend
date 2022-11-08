@@ -10,7 +10,7 @@
       "id": 2,
       "content": "Browser can execute only JavaScript",
       "date": "2022-1-17T18:39:34.091Z",
-      "important": false
+      "important": true
     },
     {
       "id": 3,
@@ -35,6 +35,12 @@
       "date": "2022-11-08T07:17:47.078Z",
       "important": false,
       "id": 6
+    },
+    {
+      "content": "POST is used to add data to REST api",
+      "date": "2022-11-08T08:51:28.388Z",
+      "important": true,
+      "id": 7
     }
   ]
 }

@@ -1,7 +1,6 @@
+//   export default App
 
-//   export default App 
-
-  // c notes
+// c notes
 // import { useState } from 'react'
 // import Note from './components/Note'
 
@@ -9,190 +8,176 @@
 // import axios from 'axios'
 // import Note from './components/Note'
 
-
-
-
-
-
 // const App = (props) => {
 //     const [notes, setNotes] = useState(props.notes)
-//     const [newNote, setNewNote] = useState('') 
+//     const [newNote, setNewNote] = useState('')
 //     const [showAll, setShowAll] = useState(true)
 
-// const App = () => {  
-//   const [notes, setNotes] = useState([])  
+// const App = () => {
+//   const [notes, setNotes] = useState([])
 //   const [newNote, setNewNote] = useState('')
 //   const [showAll, setShowAll] = useState(true)
 
-  // useEffect(() => {    
-  //   console.log('effect')    
-  //   axios      
-  //   .get('http://localhost:3001/notes')      
-  //   .then(response => {       
-  //      console.log('promise fulfilled')        
-  //      setNotes(response.data)      })  }, [])  
-  //      console.log('render', notes.length, 'notes')
+// useEffect(() => {
+//   console.log('effect')
+//   axios
+//   .get('http://localhost:3001/notes')
+//   .then(response => {
+//      console.log('promise fulfilled')
+//      setNotes(response.data)      })  }, [])
+//      console.log('render', notes.length, 'notes')
 
+//  const hook = () => {
+//   console.log('effect')
+//   axios
+//     .get('http://localhost:3001/notes')
+//     .then(response => {
+//       console.log('promise fulfilled')
+//       setNotes(response.data)
+//     })
+// }
 
+// useEffect(hook, [])
 
-      //  const hook = () => {
-      //   console.log('effect')
-      //   axios
-      //     .get('http://localhost:3001/notes')
-      //     .then(response => {
-      //       console.log('promise fulfilled')
-      //       setNotes(response.data)
-      //     })
-      // }
-      
-      // useEffect(hook, [])
-      
+// even this way
 
-      // even this way
+//     useEffect(() => {
+//       console.log('effect')
 
-  //     useEffect(() => {
-  //       console.log('effect')
-      
-  //       const eventHandler = response => {
-  //         console.log('promise fulfilled')
-  //         setNotes(response.data)
-  //       }
-      
-  //       const promise = axios.get('http://localhost:3001/notes')
-  //       promise.then(eventHandler)
-  //     }, [])
-      
+//       const eventHandler = response => {
+//         console.log('promise fulfilled')
+//         setNotes(response.data)
+//       }
 
+//       const promise = axios.get('http://localhost:3001/notes')
+//       promise.then(eventHandler)
+//     }, [])
 
-  
-  //   const addNote = (event) => {
-  //       event.preventDefault()
-  //       const noteObject = {
-  //         content: newNote,
-  //         date: new Date().toISOString(),
-  //         important: Math.random() < 0.5,
-  //         id: notes.length + 1,
-  //       }
-      
-  //       setNotes(notes.concat(noteObject))
-  //       setNewNote('')
-  //     }
-  
+//   const addNote = (event) => {
+//       event.preventDefault()
+//       const noteObject = {
+//         content: newNote,
+//         date: new Date().toISOString(),
+//         important: Math.random() < 0.5,
+//         id: notes.length + 1,
+//       }
 
-  //   const handleNoteChange = (event) => {
-  //       console.log(event.target.value)
-  //       setNewNote(event.target.value)
-  //   }
+//       setNotes(notes.concat(noteObject))
+//       setNewNote('')
+//     }
 
+//   const handleNoteChange = (event) => {
+//       console.log(event.target.value)
+//       setNewNote(event.target.value)
+//   }
 
-  //   const notesToShow = showAll
-  //       ? notes
-  //       : notes.filter(note => note.important === true)
+//   const notesToShow = showAll
+//       ? notes
+//       : notes.filter(note => note.important === true)
 
-  //   return (
-  //       <div>
-  //           <h1>Notes</h1>
-  //           <div>
-  //           <button onClick={() => setShowAll(!showAll)}>
-  //               show {showAll ? 'important' : 'all' }
-  //           </button>
-  //           </div>
-  //           <ul>
-  //           {notesToShow.map(note =>
-  //               <Note key={note.id} note={note} />
-  //           )}
-  //           </ul>
-  //         <form onSubmit={addNote}>
-  //           <input
-  //             value={newNote}
-  //             onChange={handleNoteChange}
-  //           />
-  //           <button type="submit">save</button>
-  //         </form>   
-  //       </div>
-  //     )
-  //   }
+//   return (
+//       <div>
+//           <h1>Notes</h1>
+//           <div>
+//           <button onClick={() => setShowAll(!showAll)}>
+//               show {showAll ? 'important' : 'all' }
+//           </button>
+//           </div>
+//           <ul>
+//           {notesToShow.map(note =>
+//               <Note key={note.id} note={note} />
+//           )}
+//           </ul>
+//         <form onSubmit={addNote}>
+//           <input
+//             value={newNote}
+//             onChange={handleNoteChange}
+//           />
+//           <button type="submit">save</button>
+//         </form>
+//       </div>
+//     )
+//   }
 
-
-  // export default App 
+// export default App
 
 // ----------------------------------------------------------------------
 
-  // 2.4 version 2 C ending
+// 2.4 version 2 C ending
 
+// import { useState, useEffect } from 'react'
+// import axios from 'axios'
+// import Note from './components/Note'
 
-  // import { useState, useEffect } from 'react'
-  // import axios from 'axios'
-  // import Note from './components/Note'
-  
-  // const App = () => {
-  //   const [notes, setNotes] = useState([])
-  //   const [newNote, setNewNote] = useState('')
-  //   const [showAll, setShowAll] = useState(true)
-  
-  //   useEffect(() => {
-  //     axios
-  //       .get('http://localhost:3001/notes')
-  //       .then(response => {
-  //         setNotes(response.data)
-  //       })
-  //   }, [])
-  
-  //   const addNote = (event) => {
-  //     event.preventDefault()
-  //     const noteObject = {
-  //       content: newNote,
-  //       date: new Date().toISOString(),
-  //       important: Math.random() > 0.5,
-  //       id: notes.length + 1,
-  //     }
-  
-  //     setNotes(notes.concat(noteObject))
-  //     setNewNote('')
-  //   }
-  
-  //   const handleNoteChange = (event) => {
-  //     console.log(event.target.value)
-  //     setNewNote(event.target.value)
-  //   }
-  
-  //   const notesToShow = showAll
-  //     ? notes
-  //     : notes.filter(note => note.important)
-  
-  //   return (
-  //     <div>
-  //       <h1>Notes</h1>
-  //       <div>
-  //         <button onClick={() => setShowAll(!showAll)}>
-  //           show {showAll ? 'important' : 'all' }
-  //         </button>
-  //       </div>   
-  //       <ul>
-  //         {notesToShow.map(note => 
-  //           <Note key={note.id} note={note} />
-  //         )}
-  //       </ul>
-  //       <form onSubmit={addNote}>
-  //         <input
-  //           value={newNote}
-  //           onChange={handleNoteChange}
-  //         />
-  //         <button type="submit">save</button>
-  //       </form>
-  //     </div>
-  //   )
-  // }
-  
-  // export default App
+// const App = () => {
+//   const [notes, setNotes] = useState([])
+//   const [newNote, setNewNote] = useState('')
+//   const [showAll, setShowAll] = useState(true)
+
+//   useEffect(() => {
+//     axios
+//       .get('http://localhost:3001/notes')
+//       .then(response => {
+//         setNotes(response.data)
+//       })
+//   }, [])
+
+//   const addNote = (event) => {
+//     event.preventDefault()
+//     const noteObject = {
+//       content: newNote,
+//       date: new Date().toISOString(),
+//       important: Math.random() > 0.5,
+//       id: notes.length + 1,
+//     }
+
+//     setNotes(notes.concat(noteObject))
+//     setNewNote('')
+//   }
+
+//   const handleNoteChange = (event) => {
+//     console.log(event.target.value)
+//     setNewNote(event.target.value)
+//   }
+
+//   const notesToShow = showAll
+//     ? notes
+//     : notes.filter(note => note.important)
+
+//   return (
+//     <div>
+//       <h1>Notes</h1>
+//       <div>
+//         <button onClick={() => setShowAll(!showAll)}>
+//           show {showAll ? 'important' : 'all' }
+//         </button>
+//       </div>
+//       <ul>
+//         {notesToShow.map(note =>
+//           <Note key={note.id} note={note} />
+//         )}
+//       </ul>
+//       <form onSubmit={addNote}>
+//         <input
+//           value={newNote}
+//           onChange={handleNoteChange}
+//         />
+//         <button type="submit">save</button>
+//       </form>
+//     </div>
+//   )
+// }
+
+// export default App
 
 // --------------------------------------------------------------
 
 // note 2 D version
 
 import { useState, useEffect } from 'react'
-import axios from 'axios'
+
 import Note from './components/Note'
+import noteService from './services/notes'
 
 const App = () => {
   const [notes, setNotes] = useState([])
@@ -200,63 +185,49 @@ const App = () => {
   const [showAll, setShowAll] = useState(true)
 
   useEffect(() => {
-    axios
-      .get('http://localhost:3001/notes')
-      .then(response => {
-        setNotes(response.data)
+    noteService
+      .getAll()
+      .then(initialNotes => {
+        setNotes(initialNotes)
       })
   }, [])
 
-  // const addNote = (event) => {
-  //   event.preventDefault()
-  //   const noteObject = {
-  //     content: newNote,
-  //     date: new Date().toISOString(),
-  //     important: Math.random() > 0.5,
-  //     id: notes.length + 1,
-  //   }
-
-  //   setNotes(notes.concat(noteObject))
-  //   setNewNote('')
-  // }
-
-  // const addNote = event => {
-  //   event.preventDefault()
-  //   const noteObject = {
-  //     content: newNote,
-  //     date: new Date(),
-  //     important: Math.random() < 0.5,
-  //   }
-  
-  //   axios
-  //     .post('http://localhost:3001/notes', noteObject)
-  //     .then(response => {
-  //       console.log(response)
-  //     })
-  // }
-
-
-  const addNote = event => {
+  const addNote = (event) => {
     event.preventDefault()
     const noteObject = {
       content: newNote,
-      date: new Date(),
+      date: new Date().toISOString(),
       important: Math.random() > 0.5,
+      id: notes.length + 1,
     }
-  
-    axios
-      .post('http://localhost:3001/notes', noteObject)
-      .then(response => {
-        setNotes(notes.concat(response.data))
+
+    noteService
+      .create(noteObject)
+      .then(returnedNote => {
+        setNotes(notes.concat(returnedNote))
         setNewNote('')
       })
   }
 
-
-  
   const handleNoteChange = (event) => {
-    console.log(event.target.value)
     setNewNote(event.target.value)
+  }
+
+  const toggleImportanceOf = id => {
+    const note = notes.find(n => n.id === id)
+    const changedNote = { ...note, important: !note.important }
+  
+    noteService
+      .update(id, changedNote)
+      .then(returnedNote => {
+        setNotes(notes.map(note => note.id !== id ? note : returnedNote))
+      })
+      .catch(error => {
+        alert(
+          `the note '${note.content}' was already deleted from server`
+        )
+        setNotes(notes.filter(n => n.id !== id))
+      })
   }
 
   const notesToShow = showAll
@@ -273,7 +244,11 @@ const App = () => {
       </div>   
       <ul>
         {notesToShow.map(note => 
-          <Note key={note.id} note={note} />
+          <Note
+            key={note.id}
+            note={note}
+            toggleImportance={() => toggleImportanceOf(note.id)}
+          />
         )}
       </ul>
       <form onSubmit={addNote}>
@@ -288,5 +263,3 @@ const App = () => {
 }
 
 export default App
-
-
