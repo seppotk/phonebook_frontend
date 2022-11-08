@@ -58,17 +58,16 @@ import App from './4_More_complex_state_debugging/App'
 
 ReactDOM.render(<App />, document.getElementById('root')) */
 
-// below for part1 exercises
+// below for part2 C notes exercises
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import App from './P2_c_getting_data_from_server/App'
+import axios from 'axios'
 
-import App from './App'
-
-// import App from './1_Introduction/App'
-// import App from './2_JavaScript/App'
-// import App from './3_Component_state_events/App'
-// import App from './4_More_complex_state_debugging/App'
-
-// import App from './P2_a_rendering_a_collection_modules/App'
-ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+axios.get('http://localhost:3001/notes').then(response => {
+  const notes = response.data
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    <App notes={notes} />
+  )
+})

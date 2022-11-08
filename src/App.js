@@ -1024,29 +1024,29 @@ export default function App() {
 
 // EXAM:
 
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
-function Welcome(props) {
- const msg = `Hi, ${props}!`; 
-  useEffect(() => {
-   document.title = `Welcome ${props}`; 
- }, [props]);
-return <>{msg}</h1>;
+// function Welcome(props) {
+//  const msg = `Hi, ${props}!`; 
+//   useEffect(() => {
+//    document.title = `Welcome ${props}`; 
+//  }, [props]);
+// return <>{msg}</h1>;
 
-}
+// }
 
-export default function App() {
-  Welcome("Kalle")
+// export default function App() {
+//   Welcome("Kalle")
 
-  return (
+//   return (
    
-    <>
-      <h3>Users:</h3>
-      <ul>
-        <li>Katherine Johnson: mathematician</li>
-        <li>Mario Pasquel: chemist</li>
+//     <>
+//       <h3>Users:</h3>
+//       <ul>
+//         <li>Katherine Johnson: mathematician</li>
+//         <li>Mario Pasquel: chemist</li>
 
-      </ul>
-    </>
-  );
-} 
+//       </ul>
+//     </>
+//   );
+// } 

@@ -87,7 +87,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(<App />) */
 
 // ------------------------------------------------------------------
 
-// 2.4 version nodes
+// 2.4 version notes
 
 
 
