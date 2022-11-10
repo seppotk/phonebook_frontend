@@ -637,46 +637,7 @@
 // export default App
 
 
-// 2.12* Data for countries, step1
 
-
-// import React, { useState, useEffect } from 'react'
-// import axios from 'axios'
-// import Content from './P2_c_getting_data_from_server/components/Content_country'
-// import Filter from './P2_c_getting_data_from_server/components/Filter_country'
-
-// const App = () => {
-//   const [countries, setCountries] = useState([])
-//   const [allCountries, setAllCountries] = useState([])
-//   const [newFilter, setNewFilter] = useState('')
-
-//  useEffect(() => {
-//   axios
-//     .get('https://restcountries.com/v2/all')
-//     .then(response => {
-//       console.log('promise fulfilled')
-//       setAllCountries(response.data)
-//     })
-// }, [])
-
-// const handleFilterChange = (event) => {
-//   setNewFilter(event.target.value)
-//   if (newFilter) {
-//     const regex = new RegExp( newFilter, 'i' );
-//     const filteredCountries = () => allCountries.filter(country => country.name.match(regex))
-//     setCountries(filteredCountries)
-//   }
-// }
-
-// return (
-//   <div>
-//     <Filter value={newFilter} onChange={handleFilterChange} />
-//     <Content countries={countries} setCountries={setCountries} />
-//   </div>
-// )
-// }
-
-//  export default App
 
 
 // for exam study exercise 3
@@ -1053,142 +1014,229 @@ export default function App() {
 
 
 
-// 2.15: Phonebook step7
 
-import React, { useState, useEffect } from 'react'
-import Content from './P2_c_getting_data_from_server/components/Content_person'
-import Filter from './P2_c_getting_data_from_server/components/Filter_person'
-import Notification from './P2_c_getting_data_from_server/components/Notification'
-import PersonForm from './P2_c_getting_data_from_server/components/PersonForm'
-import personService from './P2_c_getting_data_from_server/services/persons'
+
+
+// 2.12* Data for countries, step1
+
+
+// import React, { useState, useEffect } from 'react'
+// import axios from 'axios'
+// import Content from './P2_c_getting_data_from_server/components/Content_country'
+// import Filter from './P2_c_getting_data_from_server/components/Filter_country'
+
+// const App = () => {
+//   const [countries, setCountries] = useState([])
+//   const [allCountries, setAllCountries] = useState([])
+//   const [newFilter, setNewFilter] = useState('')
+
+//  useEffect(() => {
+//   axios
+//     .get('https://restcountries.com/v2/all')
+//     .then(response => {
+//       console.log('promise fulfilled')
+//       setAllCountries(response.data)
+//     })
+// }, [])
+
+// const handleFilterChange = (event) => {
+//   setNewFilter(event.target.value)
+//   if (newFilter) {
+//     const regex = new RegExp( newFilter, 'i' );
+//     const filteredCountries = () => allCountries.filter(country => country.name.match(regex))
+//     setCountries(filteredCountries)
+//   }
+// }
+
+// return (
+//   <div>
+//     <Filter value={newFilter} onChange={handleFilterChange} />
+//     <Content countries={countries} setCountries={setCountries} />
+//   </div>
+// )
+// }
+
+//  export default App
+
+
+// 2.12* Data for countries, step1 + step2 + step3 exercises
+
+
+
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+import Filter from "./P2_c_getting_data_from_server/components/Filter";
+import CountryList from "./P2_c_getting_data_from_server/components/CountryList";
 
 const App = () => {
-  const [ persons, setPersons] = useState([])
-  const [ allPersons, setAllPersons] = useState([])
-  const [ newName, setNewName ] = useState('')
-  const [ newNumber, setNewNumber ] = useState('')
-  const [newFilter, setNewFilter] = useState('')
-  const [message, setMessage] = useState(null)
+  const [countries, setCountries] = useState([]);
+  const [newFilter, setNewFilter] = useState("");
 
   useEffect(() => {
-    personService
-      .getAll()
-      .then(initialPersons => {
-      setAllPersons(initialPersons)
-    })
-  }, [])
+    axios.get("https://restcountries.com/v2/all").then(response => {
+      setCountries(response.data);
+    });
+  }, []);
 
-  const addPerson = (event) => {
-    event.preventDefault()
-    const person = allPersons.filter((person) =>
-        person.name === newName
-    )
-
-    const personToAdd = person[0]
-    const updatedPerson = { ...personToAdd, number: newNumber }
-
-    if (person.length !== 0) {
-      if (window.confirm(`${personToAdd.name} is already added to the phonebook, replace the old number with a new one ?`)) {
-        personService
-          .update(updatedPerson.id, updatedPerson).then(returnedPerson => {
-            console.log(`${returnedPerson.name} successfully updated`)
-            setAllPersons(allPersons.map(personItem => personItem.id !== personToAdd.id ? personItem : returnedPerson))
-            setNewName('')
-            setNewNumber('')
-            setMessage(
-              `${updatedPerson.name} was successfully updated`
-            )
-            setTimeout(() => {
-              setMessage(null)
-            }, 5000)
-          })
-          .catch((error) => {
-            console.log(error)
-            setAllPersons(allPersons.filter(person => person.id !== updatedPerson.id))
-            setNewName('')
-            setNewNumber('')
-            setMessage(
-              `[ERROR] ${updatedPerson.name} was already deleted from server`
-            )
-            setTimeout(() => {
-              setMessage(null)
-            }, 5000)
-          })
-      }
-    } else {
-        const personToAdd = {
-            name: newName,
-            number: newNumber
-          }
-          personService
-            .create(personToAdd)
-            .then(returnedPerson => {
-              setAllPersons(allPersons.concat(returnedPerson))
-              setNewName('')
-              setNewNumber('')
-              setMessage(
-                `${newName} was successfully added`
-              )
-              setTimeout(() => {
-                setMessage(null)
-              }, 5000)
-            })
-            .catch(error => {
-              setMessage(
-                `[ERROR] ${error.response.data.error}`
-              )
-              setTimeout(() => {
-                setMessage(null)
-              }, 5000)
-              console.log(error.response.data)
-            })
-    }
-  }
-
-  const deletePerson = (id) => {
-    const filteredPerson = allPersons.filter(person => person.id === id)
-    const personName = filteredPerson[0].name
-    const personId = filteredPerson[0].id
-    if (window.confirm(`Delete ${personName} ?`)) {
-      personService
-        .remove(personId)
-      console.log(`${personName} successfully deleted`)
-      setMessage(
-        `${personName} was successfully deleted`
-      )
-      setAllPersons(allPersons.filter(person => person.id !== personId))
-      setTimeout(() => {
-        setMessage(null)
-      }, 5000)
-    }
-  }
-
-  const handleNameChange = (event) => {
-    setNewName(event.target.value)
-  }
-
-  const handleNumberChange = (event) => {
-    setNewNumber(event.target.value)
-  }
-
-  const handleFilterChange = (event) => {
-    setNewFilter(event.target.value)
-    const regex = new RegExp( newFilter, 'i' );
-    const filteredPersons = () => allPersons.filter(person => person.name.match(regex))
-    setPersons(filteredPersons)
-  }
+  const setFilterUsingButton = e => {
+    setNewFilter(e.target.value);
+  };
 
   return (
     <div>
-      <h2>Phonebook</h2>
-      <Notification message={message} />
-      <Filter value={newFilter} onChange={handleFilterChange} />
-      <h2>Add new person</h2>
-      <PersonForm onSubmit={addPerson} newName={newName} handleNameChange={handleNameChange} newNumber={newNumber} handleNumberChange={handleNumberChange} />
-      <h2>Numbers</h2>
-      <Content persons={persons} allPersons={allPersons} deletePerson={deletePerson} />
+      <Filter newFilter={newFilter} setNewFilter={setNewFilter} />
+      <CountryList
+        countries={countries}
+        newFilter={newFilter}
+        setFilterUsingButton={setFilterUsingButton}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
+
+
+// -----------------------------------------------------------------
+
+// 
+// 2.15: Phonebook step7
+
+// import React, { useState, useEffect } from 'react'
+// import Content from './P2_c_getting_data_from_server/components/Content_person'
+// import Filter from './P2_c_getting_data_from_server/components/Filter_person'
+// import Notification from './P2_c_getting_data_from_server/components/Notification'
+// import PersonForm from './P2_c_getting_data_from_server/components/PersonForm'
+// import personService from './P2_c_getting_data_from_server/services/persons'
+
+// const App = () => {
+//   const [ persons, setPersons] = useState([])
+//   const [ allPersons, setAllPersons] = useState([])
+//   const [ newName, setNewName ] = useState('')
+//   const [ newNumber, setNewNumber ] = useState('')
+//   const [newFilter, setNewFilter] = useState('')
+//   const [message, setMessage] = useState(null)
+
+//   useEffect(() => {
+//     personService
+//       .getAll()
+//       .then(initialPersons => {
+//       setAllPersons(initialPersons)
+//     })
+//   }, [])
+
+//   const addPerson = (event) => {
+//     event.preventDefault()
+//     const person = allPersons.filter((person) =>
+//         person.name === newName
+//     )
+
+//     const personToAdd = person[0]
+//     const updatedPerson = { ...personToAdd, number: newNumber }
+
+//     if (person.length !== 0) {
+//       if (window.confirm(`${personToAdd.name} is already added to the phonebook, replace the old number with a new one ?`)) {
+//         personService
+//           .update(updatedPerson.id, updatedPerson).then(returnedPerson => {
+//             console.log(`${returnedPerson.name} successfully updated`)
+//             setAllPersons(allPersons.map(personItem => personItem.id !== personToAdd.id ? personItem : returnedPerson))
+//             setNewName('')
+//             setNewNumber('')
+//             setMessage(
+//               `${updatedPerson.name} was successfully updated`
+//             )
+//             setTimeout(() => {
+//               setMessage(null)
+//             }, 5000)
+//           })
+//           .catch((error) => {
+//             console.log(error)
+//             setAllPersons(allPersons.filter(person => person.id !== updatedPerson.id))
+//             setNewName('')
+//             setNewNumber('')
+//             setMessage(
+//               `[ERROR] ${updatedPerson.name} was already deleted from server`
+//             )
+//             setTimeout(() => {
+//               setMessage(null)
+//             }, 5000)
+//           })
+//       }
+//     } else {
+//         const personToAdd = {
+//             name: newName,
+//             number: newNumber
+//           }
+//           personService
+//             .create(personToAdd)
+//             .then(returnedPerson => {
+//               setAllPersons(allPersons.concat(returnedPerson))
+//               setNewName('')
+//               setNewNumber('')
+//               setMessage(
+//                 `${newName} was successfully added`
+//               )
+//               setTimeout(() => {
+//                 setMessage(null)
+//               }, 5000)
+//             })
+//             .catch(error => {
+//               setMessage(
+//                 `[ERROR] ${error.response.data.error}`
+//               )
+//               setTimeout(() => {
+//                 setMessage(null)
+//               }, 5000)
+//               console.log(error.response.data)
+//             })
+//     }
+//   }
+
+//   const deletePerson = (id) => {
+//     const filteredPerson = allPersons.filter(person => person.id === id)
+//     const personName = filteredPerson[0].name
+//     const personId = filteredPerson[0].id
+//     if (window.confirm(`Delete ${personName} ?`)) {
+//       personService
+//         .remove(personId)
+//       console.log(`${personName} successfully deleted`)
+//       setMessage(
+//         `${personName} was successfully deleted`
+//       )
+//       setAllPersons(allPersons.filter(person => person.id !== personId))
+//       setTimeout(() => {
+//         setMessage(null)
+//       }, 5000)
+//     }
+//   }
+
+//   const handleNameChange = (event) => {
+//     setNewName(event.target.value)
+//   }
+
+//   const handleNumberChange = (event) => {
+//     setNewNumber(event.target.value)
+//   }
+
+//   const handleFilterChange = (event) => {
+//     setNewFilter(event.target.value)
+//     const regex = new RegExp( newFilter, 'i' );
+//     const filteredPersons = () => allPersons.filter(person => person.name.match(regex))
+//     setPersons(filteredPersons)
+//   }
+
+//   return (
+//     <div>
+//       <h2>Phonebook</h2>
+//       <Notification message={message} />
+//       <Filter value={newFilter} onChange={handleFilterChange} />
+//       <h2>Add new person</h2>
+//       <PersonForm onSubmit={addPerson} newName={newName} handleNameChange={handleNameChange} newNumber={newNumber} handleNumberChange={handleNumberChange} />
+//       <h2>Numbers</h2>
+//       <Content persons={persons} allPersons={allPersons} deletePerson={deletePerson} />
+//     </div>
+//   )
+// }
+
+// export default App
