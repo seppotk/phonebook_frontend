@@ -90,19 +90,19 @@ ReactDOM.render(<App />, document.getElementById('root')) */
 
 // below for part2 E notes exercises
 
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './P2_c_getting_data_from_server/App'
-import './index.css'
+// import React from 'react'
+// import ReactDOM from 'react-dom/client'
+// import App from './P2_c_getting_data_from_server/App'
+// import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+// ReactDOM.createRoot(document.getElementById('root')).render(<App />)
 
 
 // this is for course and phonebook and countries
 
-// import React from 'react'
-// import ReactDOM from 'react-dom/client'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
-// import App from './App'
+import App from './App'
 
-// ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+ReactDOM.createRoot(document.getElementById('root')).render(<App />)
