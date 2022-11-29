@@ -1195,38 +1195,40 @@ const App = () => {
 
 
   // this was before database
-  // const deletePerson = (id) => {
-  //   const filteredPerson = allPersons.filter(person => person.id === id)
-  //   const personName = filteredPerson[0].name
-  //   const personId = filteredPerson[0].id
-  //   if (window.confirm(`Delete ${personName} ?`)) {
-  //     personService
-  //       .remove(personId)
-  //     console.log(`${personName} successfully deleted`)
-  //     setMessage(
-  //       `${personName} was successfully deleted`
-  //     )
-  //     setAllPersons(allPersons.filter(person => person.id !== personId))
-  //     setTimeout(() => {
-  //       setMessage(null)
-  //     }, 5000)
-  //   }
-  // }
-
-  const deletePerson = (personToBeDeleted) => {
-
-    console.log('delete: ',personToBeDeleted._id )
-    if(window.confirm(`Delete ${personToBeDeleted._id}`)){
-      personeService
-      .deleteObjectById(personToBeDeleted._id)
-      .then(
-        setPersons(persons.filter((person) => person['_id'] !== personToBeDeleted['_id']))
+  const deletePerson = (id) => {
+    const filteredPerson = allPersons.filter(person => person.id === id)
+    const personName = filteredPerson[0].name
+    const personId = filteredPerson[0].id
+    if (window.confirm(`Delete ${personName} ?`)) {
+      personService
+        .remove(personId)
+      console.log(`${personName} successfully deleted`)
+      setMessage(
+        `${personName} was successfully deleted`
       )
-      .then(
-        setFilterText('')
-      )
+      setAllPersons(allPersons.filter(person => person.id !== personId))
+      setTimeout(() => {
+        setMessage(null)
+      }, 5000)
     }
   }
+
+
+  // if you make changes to person.js you dont need below
+  // const deletePerson = (personToBeDeleted) => {
+
+  //   console.log('delete: ',personToBeDeleted._id )
+  //   if(window.confirm(`Delete ${personToBeDeleted._id}`)){
+  //     personeService
+  //     .deleteObjectById(personToBeDeleted._id)
+  //     .then(
+  //       setPersons(persons.filter((person) => person['_id'] !== personToBeDeleted['_id']))
+  //     )
+  //     .then(
+  //       setFilterText('')
+  //     )
+  //   }
+  // }
 
 
 
